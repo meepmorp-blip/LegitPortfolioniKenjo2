@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif;
+    height: 100vh;
+    background: linear-gradient(45deg, white, #A8DADC, #D9EAFD);
+    animation: gradientBG 10s ease infinite;
+    margin: 0;
+    background-size: 300% 300%;
+    background-attachment: fixed;
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content from the top */
+}
+
+/* Gradient background animation */
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+/* Header Styling */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.6); /* Semi-transparent white for blending */
+    color: #457B9D; /* Adjusted color to match the background */
+    padding: 10px 30px;
+    position: relative; /* No sticky or fixed positioning */
+    top: 0; /* Top of the content */
+    width: 100%; /* Full width */
+    z-index: 1000; /* Ensure it stays on top of content */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 2px solid #A8DADC; /* Border to match gradient */
+    border-radius: 20px; /* Rounded corners */
+    backdrop-filter: blur(10px); /* Adds a frosted glass effect */
+    margin: 0; /* Removes any extra margin */
+}
+
+/* Logo Styling */
+.logo a {
+    font-family: 'Playfair Display', serif; /* Cute, handwritten font */
+    font-size: 1.8rem;
+    text-decoration: none;
+    color: #457B9D; /* Matches the nav bar color */
+}
+
+/* Navigation Styling */
+.nav nav {
+    display: flex;
+    gap: 20px;
+}
+
+.nav nav a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #457B9D;
+    transition: color 0.3s ease;
+}
+
+.nav nav a:hover {
+    color: white; /* Highlight color */
+}
+
+/* Decorative Element Styling */
+.decor {
+    font-size: 1.5rem;
+    white-space: nowrap;
+    color: #457B9D;
+    opacity: 0.8;
+}
+
+
+/* Main Content Layout */
+.main-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 120px; /* Adjusted to match the height of the fixed header */
+    padding: 20px;
+    width: 100%;
+}
+
+/* Left Box Styling */
+.left-box {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 30px;
+    border-radius: 10px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left; /* Align text to the left */
+}
+
+/* Heading Styling */
+.left-box h1 {
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+    font-size: 3.5rem; /* Adjusted size */
+    font-weight: 700;
+    color: #333; /* Dark color for contrast */
+    margin-bottom: 10px; /* Space between heading and paragraph */
+    text-transform: uppercase; /* Capitalized for a formal look */
+    letter-spacing: 2px; /* Slight letter spacing */
+}
+
+/* Name Styling */
+.left-box h1:nth-of-type(2) {
+    font-size: 4.5rem; /* Slightly larger size for the name */
+    font-weight: 900; /* Extra bold */
+    color: #457B9D; /* Contrasting color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for depth */
+    letter-spacing: 4px; /* More space for the name */
+    margin-top: 0; /* Removes top margin for tighter spacing */
+}
+
+/* Paragraph Styling */
+.left-box p {
+    font-family: 'Poppins', sans-serif; /* Sans-serif for body text */
+    font-size: 1rem; /* Slightly larger body text */
+    color: #555; /* Softer color for text */
+    line-height: 1.6; /* Spacing between lines for readability */
+    margin-top: 10px; /* Space above the paragraph */
+    font-weight: 300; /* Lighter weight for the description */
+    max-width: 700px; /* Constrained width for better readability */
+}
+
+
+
+/* Right Image Box */
+.right-box {
+    flex: 1;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px; /* Increased width for a wider box */
+    max-width: 100%; /* Prevents it from going too wide */
+    height: 500px; /* Adjusted height to make it shorter */
+    overflow: hidden;
+}
+
+/* CSS for smooth scroll transition */
+.carousel-images {
+    display: flex;
+    transition: transform 1s ease-in-out; /* Smooth transition for the scrolling effect */
+}
+
+
+/* Image Slider Container */
+.slider-image-container {
+    background-color: #457B9D; /* Sky blue background */
+    border-radius: 15px;
+    overflow: hidden;
+    margin-right: 20px; /* Space between images */
+    flex-shrink: 0; /* Prevent images from shrinking */
+}
+
+/* Image Styling */
+.slider-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Flex container for image slider */
+.image-slider {
+    display: flex;
+    animation: sliderAnimation 10s infinite; /* Animation for sliding images */
+}
+
+
+/* Work Section */
+#work {
+    margin-top: 60px;
+    text-align: center;
+}
+
+#work h2 {
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+    font-size: 2.5rem; /* Heading size */
+    color: #457B9D; /* Blue color for heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+.work-gallery {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.work-item {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 800px;
+    margin: 30px auto;
+}
+
+.work-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    filter: blur(3px);
+    transition: filter 0.3s ease, transform 0.3s ease, border 0.3s ease;
+    border: 2px solid #457B9D;
+}
+
+.work-item a:hover img {
+    filter: blur(0);
+    transform: scale(1.05);
+    border: 5px solid #457B9D;
+}
+
+.work-item p {
+    margin-top: 20px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #457B9D;
+}
+
+.work-item .btn {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.work-item .btn:hover {
+    background-color: #0056b3;
+}
+
+
+@keyframes sliderAnimation {
+    0% {
+        transform: translateX(0);
+    }
+    33% {
+        transform: translateX(-100%);
+    }
+    66% {
+        transform: translateX(-200%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* About Me Section Styling */
+#about {
+    background-color: #fff; /* White background */
+    border-radius: 15px; /* Rounded corners */
+    padding: 30px; /* Padding inside the section */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 80%; /* Adjust width as necessary */
+    margin: 40px auto; /* Centered and adds margin on top and bottom */
+    text-align: center; /* Center the text inside */
+}
+
+/* Heading Styling */
+#about h2 {
+    font-family: 'Playfair Display', serif; /* Elegant serif font */
+    font-size: 2.5rem; /* Heading size */
+    color: #457B9D; /* Blue color for heading */
+    margin-bottom: 20px; /* Space below the heading */
+}
+
+/* Paragraph Styling */
+#about p {
+    font-family: 'Poppins', sans-serif; /* Sans-serif for body text */
+    font-size: 1.2rem; /* Font size for the paragraph */
+    color: #555; /* Softer text color */
+    line-height: 1.6; /* Spacing between lines */
+    margin-bottom: 20px; /* Spacing between paragraphs */
+}
+
+/* Social Section Styling */
+#social {
+    text-align: center;
+    margin-top: 60px; /* Space between sections */
+}
+
+#social h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    color: #457B9D; /* Blue color for the heading */
+    margin-bottom: 20px;
+}
+
+/* Social Links Container */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Increased space between icons */
+}
+
+/* Social Media Icon Styling */
+.social-item {
+    width: 350px; /* Size of the box */
+    height: 350px; /* Size of the box */
+    perspective: 1000px; /* Adds depth to the flip effect */
+}
+/* Container for flipping with border */
+.social-item-inner {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d; /* Ensures the content inside the box flips correctly */
+    transition: transform 0.6s, box-shadow 0.3s; /* Smooth flip and shadow transition */
+    border: 5px solid #457B9D; /* Thicker border for emphasis */
+    border-radius: 15px; /* Rounded corners for the inner container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Initial subtle shadow */
+}
+
+/* 3D hover effect */
+.social-item-inner:hover {
+    transform: scale(1.05); /* Slight scale for 3D effect */
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3); /* Stronger shadow for lifted effect */
+}
+
+/* Flip on Hover */
+.social-item:hover .social-item-inner {
+    transform: rotateY(180deg); /* Flip the item */
+}
+
+/* Front of the box (Image) */
+.social-item-front {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Prevents the back from showing */
+    border-radius: 15px; /* Rounded corners for the front */
+}
+
+.social-item-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the image covers the entire box */
+    border-radius: 15px; /* Matching rounded corners */
+}
+
+/* Back of the box (Text) */
+.social-item-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #457B9D; /* Background color for the back */
+    color: white; /* Text color */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px; /* Rounded corners for the back */
+    backface-visibility: hidden; /* Prevents the front from showing */
+    transform: rotateY(180deg); /* Initially position the back */
+    font-size: 1.5rem; /* Size of the text */
+    font-weight: bold;
+}
+
+/* Hover effect for text */
+.social-item-back:hover {
+    background-color: #457B9D; /* Change background on hover */
+}
+
+/* Footer Styling */
+footer {
+    width: 100%; /* Ensure full width */
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+    color: #457B9D; /* Footer text color */
+    padding: 20px 0; /* Padding around the footer */
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border: 2px solid #A8DADC; /* Border to match gradient */
+    border-radius: 20px; /* Rounded corners */
+    backdrop-filter: blur(10px); /* Adds a frosted glass effect */
+    text-align: center;
+    margin-top: 60px; /* Creates some space above the footer */
+}
+
+/* Footer Links */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.footer-links ul li {
+    font-size: 1.2rem;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #457B9D;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: white; /* Highlight color on hover */
+}
+
+/* Footer Contact Section */
+.footer-contact {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.footer-contact a {
+    text-decoration: none;
+    color: #457B9D;
+}
+
+.footer-contact a:hover {
+    color: white; /* Highlight color */
+}
+
+/* Ensures the footer stays at the bottom of the content */
+body {
+    min-height: 100vh; /* Ensures the body takes full height */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Ensures the content takes available space */
+}
